@@ -1,3 +1,5 @@
+#Code returns a list of devices which are connected to your network (assumption your subnet is '192.168.1.0/24')
+
 #Run in raspberry pi Terminal first:
 #sudo apt-get install nmap #Makes the raspberry pi nmap capable
 #sudo pip3 install python-nmap #Do NOT install nmap as it is the wrong one
