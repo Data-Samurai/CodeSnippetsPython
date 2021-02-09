@@ -1,0 +1,13 @@
+#Run in raspberry pi Terminal first:
+#sudo apt-get install nmap #Makes the raspberry pi nmap capable
+#sudo pip3 install python-nmap #Do NOT install nmap as it is the wrong one
+
+import nmap
+
+nm = nmap.PortScanner()
+
+nm.scan(hosts='192.168.1.0/24', arguments='-n -sP -PE')
+hosts_list = [(x, nm[x]['status']['state']) for x in nm.all_hosts()]
+
+for host, status in hosts_list:
+    print(host + ' ' + status)
